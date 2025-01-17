@@ -1,11 +1,9 @@
 name: Deploy Lambda Function
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 env:
   AWS_REGION: us-east-2
   PROJECT_NAME: SR.PasswordReset.Api
@@ -32,14 +30,28 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
           
+      - name: Debug Directory Structure
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "Contents of current directory:"
+          ls -R
+          echo "Contents of SR.PasswordReset.Api:"
+          ls -R SR.PasswordReset.Api/
+      
       - name: Restore dependencies
+        working-directory: SR.PasswordReset.Api
         run: dotnet restore
         
       - name: Build with AOT
+        working-directory: SR.PasswordReset.Api
         run: dotnet publish -c Release -r linux-x64 --self-contained true
           
       - name: Deploy to Lambda
         run: |
+          cd SR.PasswordReset.Api
+          pwd
+          ls -la
           dotnet lambda deploy-serverless \
             --template serverless.template \
             --region ${{ env.AWS_REGION }} \
