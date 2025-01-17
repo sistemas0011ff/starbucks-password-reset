@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f8cd3c3d-ddbd-405b-a5ed-224e584bfee8",
+		"name": "StaBucks-Reto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29998891"
+	},
+	"item": [
+		{
+			"name": "Cloud",
+			"item": [
+				{
+					"name": "Login-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"xdevdeveloper672@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fm6zl19nog.execute-api.us-east-2.amazonaws.com/Prod/password-reset/request",
+							"protocol": "https",
+							"host": [
+								"fm6zl19nog",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"password-reset",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-send-opt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"devdeveloper672@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fm6zl19nog.execute-api.us-east-2.amazonaws.com/Prod/password-reset/send-otp",
+							"protocol": "https",
+							"host": [
+								"fm6zl19nog",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"password-reset",
+								"send-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-validate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"devdeveloper672@gmail.com\",\r\n    \"code\":\"024455X\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fm6zl19nog.execute-api.us-east-2.amazonaws.com/Prod/password-reset/validate",
+							"protocol": "https",
+							"host": [
+								"fm6zl19nog",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"password-reset",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"devdeveloper672@gmail.com\",\r\n    \"newPassword\": \"Inicios2022$$$$+$$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fm6zl19nog.execute-api.us-east-2.amazonaws.com/Prod/password-reset/reset",
+							"protocol": "https",
+							"host": [
+								"fm6zl19nog",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"password-reset",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
