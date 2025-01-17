@@ -1,0 +1,2 @@
+/tmp/source/SR.PasswordReset.Api/bin/Release/net8.0/publish/SR.PasswordReset.Api
+/tmp/source/SR.PasswordReset.Api/bin/Release/net8.0/publish/SR.PasswordReset.Api.pdb

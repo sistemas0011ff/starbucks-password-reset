@@ -1,0 +1,391 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "Funciones Lambda para el sistema de reset de contraseña This template is partially managed by Amazon.Lambda.Annotations (v1.6.1.0).",
+  "Resources": {
+    "UsersTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "SBUsers",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "Email",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "Email",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        }
+      }
+    },
+    "OTPTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "PasswordResetOTP",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "Email",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "Email",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "TimeToLiveSpecification": {
+          "AttributeName": "ExpirationTime",
+          "Enabled": true
+        }
+      }
+    },
+    "SRPasswordResetApisrcapphandlerspasswordresetRequestOtpHandlerRequestOtpHandleGenerated": {
+      "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootPost"
+        ],
+        "SyncedEventProperties": {
+          "RootPost": [
+            "Path",
+            "Method"
+          ]
+        }
+      },
+      "Properties": {
+        "Runtime": "dotnet8",
+        "CodeUri": ".",
+        "MemorySize": 512,
+        "Timeout": 30,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "cognito-idp:AdminInitiateAuth",
+                  "cognito-idp:AdminGetUser",
+                  "cognito-idp:AdminConfirmSignUp",
+                  "cognito-idp:ForgotPassword",
+                  "cognito-idp:ConfirmForgotPassword"
+                ],
+                "Resource": "arn:aws:cognito-idp:us-east-2:*:userpool/us-east-2_f24Fc3V42"
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:PutItem",
+                  "dynamodb:GetItem",
+                  "dynamodb:UpdateItem"
+                ],
+                "Resource": [
+                  {
+                    "Fn::GetAtt": [
+                      "OTPTable",
+                      "Arn"
+                    ]
+                  },
+                  {
+                    "Fn::GetAtt": [
+                      "UsersTable",
+                      "Arn"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "PackageType": "Zip",
+        "Handler": "SR.PasswordReset.Api",
+        "Environment": {
+          "Variables": {
+            "ANNOTATIONS_HANDLER": "RequestOtpHandle",
+            "COGNITO_USER_POOL_ID": "us-east-2_f24Fc3V42",
+            "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
+            "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
+            "OTP_TABLE_NAME": "PasswordResetOTP",
+            "USERS_TABLE_NAME": "SBUsers"
+          }
+        },
+        "Events": {
+          "RootPost": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/password-reset/request",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    },
+    "SRPasswordResetApisrcapphandlerspasswordresetValidateOtpHandlerValidateOtpHandleGenerated": {
+      "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootPost"
+        ],
+        "SyncedEventProperties": {
+          "RootPost": [
+            "Path",
+            "Method"
+          ]
+        }
+      },
+      "Properties": {
+        "Runtime": "dotnet8",
+        "CodeUri": ".",
+        "MemorySize": 512,
+        "Timeout": 30,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "cognito-idp:AdminGetUser",
+                  "cognito-idp:AdminSetUserPassword",
+                  "cognito-idp:ForgotPassword",
+                  "cognito-idp:ConfirmForgotPassword",
+                  "cognito-idp:AdminInitiateAuth",
+                  "cognito-idp:AdminRespondToAuthChallenge"
+                ],
+                "Resource": "arn:aws:cognito-idp:us-east-2:*:userpool/us-east-2_f24Fc3V42"
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:GetItem",
+                  "dynamodb:UpdateItem"
+                ],
+                "Resource": [
+                  {
+                    "Fn::GetAtt": [
+                      "OTPTable",
+                      "Arn"
+                    ]
+                  },
+                  {
+                    "Fn::GetAtt": [
+                      "UsersTable",
+                      "Arn"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "PackageType": "Zip",
+        "Handler": "SR.PasswordReset.Api",
+        "Environment": {
+          "Variables": {
+            "ANNOTATIONS_HANDLER": "ValidateOtpHandle",
+            "COGNITO_USER_POOL_ID": "us-east-2_f24Fc3V42",
+            "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
+            "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
+            "OTP_TABLE_NAME": "PasswordResetOTP",
+            "USERS_TABLE_NAME": "SBUsers"
+          }
+        },
+        "Events": {
+          "RootPost": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/password-reset/validate",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    },
+    "SRPasswordResetApisrcapphandlerspasswordresetSendOtpHandlerSendOtpHandleGenerated": {
+      "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootPost"
+        ],
+        "SyncedEventProperties": {
+          "RootPost": [
+            "Path",
+            "Method"
+          ]
+        }
+      },
+      "Properties": {
+        "Runtime": "dotnet8",
+        "CodeUri": ".",
+        "MemorySize": 512,
+        "Timeout": 30,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "cognito-idp:AdminGetUser",
+                  "cognito-idp:AdminSetUserPassword",
+                  "cognito-idp:ForgotPassword",
+                  "cognito-idp:ConfirmForgotPassword",
+                  "cognito-idp:AdminInitiateAuth",
+                  "cognito-idp:AdminRespondToAuthChallenge"
+                ],
+                "Resource": "arn:aws:cognito-idp:us-east-2:*:userpool/us-east-2_f24Fc3V42"
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:GetItem",
+                  "dynamodb:UpdateItem"
+                ],
+                "Resource": [
+                  {
+                    "Fn::GetAtt": [
+                      "OTPTable",
+                      "Arn"
+                    ]
+                  },
+                  {
+                    "Fn::GetAtt": [
+                      "UsersTable",
+                      "Arn"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "PackageType": "Zip",
+        "Handler": "SR.PasswordReset.Api",
+        "Environment": {
+          "Variables": {
+            "ANNOTATIONS_HANDLER": "SendOtpHandle",
+            "COGNITO_USER_POOL_ID": "us-east-2_f24Fc3V42",
+            "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
+            "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
+            "OTP_TABLE_NAME": "PasswordResetOTP",
+            "USERS_TABLE_NAME": "SBUsers"
+          }
+        },
+        "Events": {
+          "RootPost": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/password-reset/send-otp",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    },
+    "SRPasswordResetApisrcapphandlerspasswordresetResetPasswordHandlerResetPasswordHandleGenerated": {
+      "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootPost"
+        ],
+        "SyncedEventProperties": {
+          "RootPost": [
+            "Path",
+            "Method"
+          ]
+        }
+      },
+      "Properties": {
+        "Runtime": "dotnet8",
+        "CodeUri": ".",
+        "MemorySize": 512,
+        "Timeout": 30,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "cognito-idp:AdminGetUser",
+                  "cognito-idp:AdminSetUserPassword",
+                  "cognito-idp:ForgotPassword",
+                  "cognito-idp:ConfirmForgotPassword",
+                  "cognito-idp:AdminInitiateAuth",
+                  "cognito-idp:AdminRespondToAuthChallenge"
+                ],
+                "Resource": "arn:aws:cognito-idp:us-east-2:*:userpool/us-east-2_f24Fc3V42"
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:GetItem",
+                  "dynamodb:UpdateItem"
+                ],
+                "Resource": [
+                  {
+                    "Fn::GetAtt": [
+                      "OTPTable",
+                      "Arn"
+                    ]
+                  },
+                  {
+                    "Fn::GetAtt": [
+                      "UsersTable",
+                      "Arn"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "PackageType": "Zip",
+        "Handler": "SR.PasswordReset.Api",
+        "Environment": {
+          "Variables": {
+            "ANNOTATIONS_HANDLER": "ResetPasswordHandle",
+            "COGNITO_USER_POOL_ID": "us-east-2_f24Fc3V42",
+            "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
+            "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
+            "OTP_TABLE_NAME": "PasswordResetOTP",
+            "USERS_TABLE_NAME": "SBUsers"
+          }
+        },
+        "Events": {
+          "RootPost": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/password-reset/reset",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ApiURL": {
+      "Description": "URL del API endpoint",
+      "Value": {
+        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+      }
+    }
+  }
+}
