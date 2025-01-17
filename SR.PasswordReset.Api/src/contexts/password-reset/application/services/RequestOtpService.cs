@@ -26,7 +26,7 @@ namespace SR.PasswordReset.Api.src.contexts.password_reset.application.services
                     return new ServiceResponse(
                         isSuccess: false,
                         code: "USER_NOT_FOUND",
-                        userMessage: "El usuario no está registrado en el sistema",
+                        userMessage: "El usuario no está registrado en el sistema.",
                         detailMessage: $"No se encontró el usuario con email {email.Value}"
                     );
                 }
@@ -34,7 +34,7 @@ namespace SR.PasswordReset.Api.src.contexts.password_reset.application.services
                 return new ServiceResponse(
                     isSuccess: true,
                     code: "REQUEST_OTP_SUCCESS",
-                    userMessage: "Usuario verificado correctamente",
+                    userMessage: "Usuario verificado correctamente.",
                     detailMessage: $"Se ha verificado el usuario con email {email.Value}"
                 );
             }
