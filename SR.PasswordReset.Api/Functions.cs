@@ -28,7 +28,6 @@ namespace SR.PasswordReset.Api;
 [JsonSerializable(typeof(APIGatewayHttpApiV2ProxyResponse), TypeInfoPropertyName = "HttpApiResponse")]
 
 // Tipos de contexto y certificados
-// Tipos de contexto y certificados
 [JsonSerializable(typeof(APIGatewayProxyRequest), TypeInfoPropertyName = "ProxyRequest")]
 [JsonSerializable(typeof(APIGatewayProxyResponse), TypeInfoPropertyName = "ProxyResponse")]
 [JsonSerializable(typeof(APIGatewayHttpApiV2ProxyRequest), TypeInfoPropertyName = "HttpApiRequest")]
