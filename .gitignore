@@ -398,3 +398,70 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+# .NET Core / Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.userosscache
+*.suo
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.vspscc
+*.vssscc
+.builds
+*.sln.docstates
+
+# .NET CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# AWS Lambda publish output
+/publish/
