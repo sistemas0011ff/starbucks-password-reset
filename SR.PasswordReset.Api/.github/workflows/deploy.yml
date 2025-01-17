@@ -31,18 +31,18 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           
       - name: Restore dependencies
-        working-directory: ${{ env.PROJECT_NAME }}
+        working-directory: SR.PasswordReset.Api
         run: dotnet restore
         
       - name: Build with AOT
-        working-directory: ${{ env.PROJECT_NAME }}
+        working-directory: SR.PasswordReset.Api
         run: dotnet publish -c Release -r linux-x64 --self-contained true
           
       - name: Deploy to Lambda
-        working-directory: ${{ env.PROJECT_NAME }}
         run: |
+          cd SR.PasswordReset.Api
           dotnet lambda deploy-serverless \
-            --template serverless.template \
+            --template SR.PasswordReset.Api/serverless.template \
             --region ${{ env.AWS_REGION }} \
             --stack-name starbucks-password-reset \
             --s3-bucket lambda-builds-starbucks \
