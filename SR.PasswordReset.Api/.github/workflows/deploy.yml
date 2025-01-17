@@ -20,9 +20,9 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
           
-      - name: Setup AWS SAM
-        uses: aws-actions/setup-sam@v2
-          
+      - name: Install Amazon Lambda Tools
+        run: dotnet tool install -g Amazon.Lambda.Tools
+        
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -31,19 +31,20 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           
       - name: Restore dependencies
+        working-directory: ${{ env.PROJECT_NAME }}
         run: dotnet restore
         
       - name: Build with AOT
+        working-directory: ${{ env.PROJECT_NAME }}
         run: dotnet publish -c Release -r linux-x64 --self-contained true
           
-      - name: Build with SAM
-        run: sam build --template-file serverless.template
-        
-      - name: Deploy with SAM
+      - name: Deploy to Lambda
+        working-directory: ${{ env.PROJECT_NAME }}
         run: |
-          sam deploy --stack-name starbucks-password-reset \
+          dotnet lambda deploy-serverless \
+            --template serverless.template \
             --region ${{ env.AWS_REGION }} \
+            --stack-name starbucks-password-reset \
             --s3-bucket lambda-builds-starbucks \
-            --capabilities CAPABILITY_IAM \
-            --no-confirm-changeset \
-            --no-fail-on-empty-changeset
+            --s3-prefix ${{ env.PROJECT_NAME }}/ \
+            --msbuild-parameters "--self-contained true"
