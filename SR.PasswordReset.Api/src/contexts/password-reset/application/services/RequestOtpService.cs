@@ -43,7 +43,7 @@ namespace SR.PasswordReset.Api.src.contexts.password_reset.application.services
                 return new ServiceResponse(
                     isSuccess: false,
                     code: "INTERNAL_ERROR",
-                    userMessage: "Error interno del servidor",
+                    userMessage: "Error ",
                     detailMessage: ex.Message
                 );
             }
