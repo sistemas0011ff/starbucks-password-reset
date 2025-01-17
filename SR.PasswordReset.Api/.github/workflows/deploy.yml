@@ -29,6 +29,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
+
+      - name: List files for debugging
+        run: |
+          pwd
+          ls -la
+          ls -la SR.PasswordReset.Api/
           
       - name: Restore dependencies
         working-directory: SR.PasswordReset.Api
@@ -41,10 +47,11 @@ jobs:
       - name: Deploy to Lambda
         working-directory: SR.PasswordReset.Api
         run: |
-          ls -la  # Para ver los archivos en el directorio
-          pwd     # Para ver el directorio actual
+          echo "Current directory: $(pwd)"
+          echo "Listing files in current directory:"
+          ls -la
           dotnet lambda deploy-serverless \
-            --template-file serverless.template \
+            --template-file "serverless.template" \
             --region ${{ env.AWS_REGION }} \
             --stack-name starbucks-password-reset \
             --s3-bucket lambda-builds-starbucks \
