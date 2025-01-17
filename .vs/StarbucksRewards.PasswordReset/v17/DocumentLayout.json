@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\src\\contexts\\shared\\responses\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\src\\contexts\\shared\\responses\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\serverless.template||{EC06DED3-700F-4CE3-9313-8E2324BA885D}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\serverless.template||{EC06DED3-700F-4CE3-9313-8E2324BA885D}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\src\\contexts\\password-reset\\infrastructure\\repositories\\cognitorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\src\\contexts\\password-reset\\infrastructure\\repositories\\cognitorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\src\\contexts\\password-reset\\application\\services\\requestotpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\src\\contexts\\password-reset\\application\\services\\requestotpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\src\\contexts\\password-reset\\application\\dtos\\requestotpapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\src\\contexts\\password-reset\\application\\dtos\\requestotpapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\.github\\workflows\\deploy.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\.github\\workflows\\deploy.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\src\\app\\handlers\\password-reset\\request-otp.handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\src\\app\\handlers\\password-reset\\request-otp.handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|solutionrelative:sr.passwordreset.api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32A89487-E066-406B-80DA-1C7E5868EA5E}|SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj|c:\\users\\fyapeuser\\source\\repos\\starbucksrewards.passwordreset\\sr.passwordreset.api\\sr.passwordreset.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -22,45 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BaseResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\shared\\responses\\BaseResponse.cs",
-              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\src\\contexts\\shared\\responses\\BaseResponse.cs",
-              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\shared\\responses\\BaseResponse.cs",
-              "RelativeToolTip": "SR.PasswordReset.Api\\src\\contexts\\shared\\responses\\BaseResponse.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CognitoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\password-reset\\infrastructure\\repositories\\CognitoRepository.cs",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\src\\contexts\\password-reset\\infrastructure\\repositories\\CognitoRepository.cs",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\password-reset\\infrastructure\\repositories\\CognitoRepository.cs",
+              "RelativeToolTip": "SR.PasswordReset.Api\\src\\contexts\\password-reset\\infrastructure\\repositories\\CognitoRepository.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAmwMsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T03:43:29.174Z",
+              "WhenOpened": "2025-01-17T06:19:16.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Functions.cs",
-              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\Functions.cs",
-              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\Functions.cs",
-              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\Functions.cs",
-              "RelativeToolTip": "SR.PasswordReset.Api\\Functions.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T03:20:38.34Z",
+              "DocumentIndex": 0,
+              "Title": "serverless.template",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\serverless.template",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\serverless.template",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\serverless.template",
+              "RelativeToolTip": "SR.PasswordReset.Api\\serverless.template",
+              "ViewState": "AgIAABoBAAAAAAAAAAAAACsBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-17T06:17:26.281Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "RequestOtpService.cs",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\services\\RequestOtpService.cs",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\services\\RequestOtpService.cs",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\services\\RequestOtpService.cs",
+              "RelativeToolTip": "SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\services\\RequestOtpService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T06:11:35.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RequestOtpApplicationDto.cs",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\dtos\\RequestOtpApplicationDto.cs",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\dtos\\RequestOtpApplicationDto.cs",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\dtos\\RequestOtpApplicationDto.cs",
+              "RelativeToolTip": "SR.PasswordReset.Api\\src\\contexts\\password-reset\\application\\dtos\\RequestOtpApplicationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T06:11:25.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "deploy.yml",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\.github\\workflows\\deploy.yml",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\.github\\workflows\\deploy.yml",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\.github\\workflows\\deploy.yml",
+              "RelativeToolTip": "SR.PasswordReset.Api\\.github\\workflows\\deploy.yml",
+              "ViewState": "AgIAAB4AAAAAAAAAAADwvzwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-01-17T05:36:49.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Functions.cs",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\Functions.cs",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\Functions.cs",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\Functions.cs",
+              "RelativeToolTip": "SR.PasswordReset.Api\\Functions.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T05:32:05.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "request-otp.handler.cs",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\app\\handlers\\password-reset\\request-otp.handler.cs",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\src\\app\\handlers\\password-reset\\request-otp.handler.cs",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\src\\app\\handlers\\password-reset\\request-otp.handler.cs",
+              "RelativeToolTip": "SR.PasswordReset.Api\\src\\app\\handlers\\password-reset\\request-otp.handler.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T05:31:57.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Readme.md",
+              "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\Readme.md",
+              "RelativeDocumentMoniker": "SR.PasswordReset.Api\\Readme.md",
+              "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\Readme.md",
+              "RelativeToolTip": "SR.PasswordReset.Api\\Readme.md",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-01-17T05:31:37.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "SR.PasswordReset.Api",
               "DocumentMoniker": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj",
               "RelativeDocumentMoniker": "SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj",
               "ToolTip": "C:\\Users\\Fyapeuser\\source\\repos\\StarbucksRewards.PasswordReset\\SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj",
               "RelativeToolTip": "SR.PasswordReset.Api\\SR.PasswordReset.Api.csproj",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-17T03:00:57.083Z",
+              "WhenOpened": "2025-01-17T04:38:10.305Z",
               "EditorCaption": ""
             }
           ]

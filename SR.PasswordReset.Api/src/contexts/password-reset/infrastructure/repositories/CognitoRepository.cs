@@ -15,6 +15,7 @@ namespace SR.PasswordReset.Api.src.contexts.password_reset.infrastructure.reposi
         private readonly IAmazonCognitoIdentityProvider _cognitoClient;
         private readonly AWSConfiguration _awsConfig;
         private readonly ILogger<CognitoRepository> _logger;
+        private readonly int _otpExpirationMinutes;
 
         public CognitoRepository(
             IAmazonCognitoIdentityProvider cognitoClient,
@@ -24,6 +25,8 @@ namespace SR.PasswordReset.Api.src.contexts.password_reset.infrastructure.reposi
             _cognitoClient = cognitoClient;
             _awsConfig = awsConfig;
             _logger = logger;
+            _otpExpirationMinutes = int.Parse(Environment.GetEnvironmentVariable("OTP_EXPIRATION_MINUTES") ?? "3");
+
         }
 
         public async Task ConfirmUserExists(Email email)
@@ -135,8 +138,12 @@ namespace SR.PasswordReset.Api.src.contexts.password_reset.infrastructure.reposi
                 {
                     ClientId = _awsConfig.ClientId,
                     Username = email.Value,
-                    SecretHash = secretHash
+                    SecretHash = secretHash,
                 };
+
+                _logger.LogInformation($"Enviando solicitud de OTP con tiempo de expiración de {_otpExpirationMinutes} minutos");
+                await _cognitoClient.ForgotPasswordAsync(forgotPasswordRequest);
+                _logger.LogInformation("OTP enviado exitosamente");
 
                 _logger.LogInformation("Enviando solicitud de OTP");
                 await _cognitoClient.ForgotPasswordAsync(forgotPasswordRequest);

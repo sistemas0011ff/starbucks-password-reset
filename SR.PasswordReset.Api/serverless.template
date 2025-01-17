@@ -25,32 +25,6 @@
         }
       }
     },
-    "OTPTable": {
-      "Type": "AWS::DynamoDB::Table",
-      "Properties": {
-        "TableName": "PasswordResetOTP",
-        "AttributeDefinitions": [
-          {
-            "AttributeName": "Email",
-            "AttributeType": "S"
-          }
-        ],
-        "KeySchema": [
-          {
-            "AttributeName": "Email",
-            "KeyType": "HASH"
-          }
-        ],
-        "ProvisionedThroughput": {
-          "ReadCapacityUnits": 5,
-          "WriteCapacityUnits": 5
-        },
-        "TimeToLiveSpecification": {
-          "AttributeName": "ExpirationTime",
-          "Enabled": true
-        }
-      }
-    },
     "SRPasswordResetApisrcapphandlerspasswordresetRequestOtpHandlerRequestOtpHandleGenerated": {
       "Type": "AWS::Serverless::Function",
       "Metadata": {
@@ -95,12 +69,6 @@
                 "Resource": [
                   {
                     "Fn::GetAtt": [
-                      "OTPTable",
-                      "Arn"
-                    ]
-                  },
-                  {
-                    "Fn::GetAtt": [
                       "UsersTable",
                       "Arn"
                     ]
@@ -119,7 +87,8 @@
             "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
             "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
             "OTP_TABLE_NAME": "PasswordResetOTP",
-            "USERS_TABLE_NAME": "SBUsers"
+            "USERS_TABLE_NAME": "SBUsers",
+            "OTP_EXPIRATION_MINUTES": "24"
           }
         },
         "Events": {
@@ -177,12 +146,6 @@
                 "Resource": [
                   {
                     "Fn::GetAtt": [
-                      "OTPTable",
-                      "Arn"
-                    ]
-                  },
-                  {
-                    "Fn::GetAtt": [
                       "UsersTable",
                       "Arn"
                     ]
@@ -201,7 +164,8 @@
             "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
             "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
             "OTP_TABLE_NAME": "PasswordResetOTP",
-            "USERS_TABLE_NAME": "SBUsers"
+            "USERS_TABLE_NAME": "SBUsers",
+            "OTP_EXPIRATION_MINUTES": "24"
           }
         },
         "Events": {
@@ -259,12 +223,6 @@
                 "Resource": [
                   {
                     "Fn::GetAtt": [
-                      "OTPTable",
-                      "Arn"
-                    ]
-                  },
-                  {
-                    "Fn::GetAtt": [
                       "UsersTable",
                       "Arn"
                     ]
@@ -283,7 +241,8 @@
             "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
             "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
             "OTP_TABLE_NAME": "PasswordResetOTP",
-            "USERS_TABLE_NAME": "SBUsers"
+            "USERS_TABLE_NAME": "SBUsers",
+            "OTP_EXPIRATION_MINUTES": "24"
           }
         },
         "Events": {
@@ -341,12 +300,6 @@
                 "Resource": [
                   {
                     "Fn::GetAtt": [
-                      "OTPTable",
-                      "Arn"
-                    ]
-                  },
-                  {
-                    "Fn::GetAtt": [
                       "UsersTable",
                       "Arn"
                     ]
@@ -365,7 +318,8 @@
             "COGNITO_CLIENT_ID": "1gpvs9920uobjccmje4stqgghh",
             "COGNITO_CLIENT_SECRET": "1tcfsk64fbrc518k47dcbo8dv5jsqu1bdq7mpr1u6iu489bqr0r",
             "OTP_TABLE_NAME": "PasswordResetOTP",
-            "USERS_TABLE_NAME": "SBUsers"
+            "USERS_TABLE_NAME": "SBUsers",
+            "OTP_EXPIRATION_MINUTES": "24"
           }
         },
         "Events": {
