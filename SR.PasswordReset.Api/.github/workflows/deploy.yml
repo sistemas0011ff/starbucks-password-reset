@@ -39,10 +39,12 @@ jobs:
         run: dotnet publish -c Release -r linux-x64 --self-contained true
           
       - name: Deploy to Lambda
+        working-directory: SR.PasswordReset.Api
         run: |
-          cd SR.PasswordReset.Api
+          ls -la  # Para ver los archivos en el directorio
+          pwd     # Para ver el directorio actual
           dotnet lambda deploy-serverless \
-            --template SR.PasswordReset.Api/serverless.template \
+            --template-file serverless.template \
             --region ${{ env.AWS_REGION }} \
             --stack-name starbucks-password-reset \
             --s3-bucket lambda-builds-starbucks \
