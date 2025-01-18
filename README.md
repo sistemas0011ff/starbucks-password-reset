@@ -165,7 +165,7 @@ sam local start-api - Iniciar API local
 - **Descripción:** Tiene la responsabilidad de validar si el correo existe en AWS Cognito (asegurando que es un usuario válido) y de enviar el código OTP al correo del usuario a través de Amazon SES.
   Este resultado deberá ser utilizado para consumir el recurso:
 - **Datos de Entada:**
-  - `email`: Es el correo del cliente/usuario que se validará si existe en la base de datos.
+  - `email`: Es el correo del cliente/usuario que se validará en cognito
 - **Códigos de respuesta:**
   - `Code`: Códigos de respuestas definidos para interpratar el resultado de la consulta.
     - REQUEST_OTP_SUCCESS: Indica que el email de usuario si existe en la base de datos.
@@ -182,7 +182,8 @@ sam local start-api - Iniciar API local
 - **Descripción:** Se especializa en validar que el código OTP ingresado sea correcto y corresponda al usuario.
 - Este resultado deberá ser utilizado para consumir el recurso:
 - **Datos de Entada:**
-  - `email`: Es el correo del cliente/usuario que se validará si existe en la base de datos.
+  - `email`: Es el correo del cliente/usuario
+  - `code`: Código OTP de 6 dígitos, solo números
 - **Códigos de respuesta:**
   - `Code`: Códigos de respuestas definidos para interpratar el resultado de la consulta.
     - REQUEST_OTP_SUCCESS: Indica que el email de usuario si existe en la base de datos.
@@ -199,7 +200,8 @@ sam local start-api - Iniciar API local
 - **Descripción:** Se dedica únicamente a realizar el cambio efectivo de la contraseña..
 - - Este resultado deberá ser utilizado para consumir el recurso:
 - **Datos de Entada:**
-  - `email`: Es el correo del cliente/usuario que se validará si existe en la base de datos.
+  - `email`: Es el correo del cliente/usuario 
+  - `newPassword`: Nueva contraseña 
 - **Códigos de respuesta:**
   - `Code`: Códigos de respuestas definidos para interpratar el resultado de la consulta.
     - REQUEST_OTP_SUCCESS: Indica que el email de usuario si existe en la base de datos.
