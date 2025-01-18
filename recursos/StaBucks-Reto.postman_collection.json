@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"xdevdeveloper672@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"devdeveloper672@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,7 +82,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"devdeveloper672@gmail.com\",\r\n    \"code\":\"024455X\"\r\n}",
+							"raw": "{\r\n    \"email\": \"devdeveloper672@gmail.com\",\r\n    \"code\":\"024455\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
