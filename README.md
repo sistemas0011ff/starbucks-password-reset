@@ -264,8 +264,6 @@ JSON en la carpeta Recursos del proyecto:
 
 Correo para la prueba:
 
-devdeveloper672@gmail.com
-CLAVE: Edimax0011ff
 
 Accesso a AWS: 
 ![Consulta](images/JSN2.png)
